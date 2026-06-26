@@ -16,7 +16,7 @@ export default function Home() {
   ];
 
   return (
-  <main className="min-h-screen bg-[#f4efe7] text-white px-6 overflow-hidden relative before:content-[''] before:fixed before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,106,0,0.12),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(0,180,255,0.10),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(0,255,120,0.08),transparent_40%)] before:pointer-events-none after:content-[''] after:fixed after:inset-0 after:bg-[linear-gradient(rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px)] after:bg-[size:80px_80px] after:pointer-events-none">
+  <main className="min-h-screen bg-[#f4efe7] text-white px-0 overflow-hidden relative before:content-[''] before:fixed before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,106,0,0.12),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(0,180,255,0.10),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(0,255,120,0.08),transparent_40%)] before:pointer-events-none after:content-[''] after:fixed after:inset-0 after:bg-[linear-gradient(rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px)] after:bg-[size:80px_80px] after:pointer-events-none">
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
   <video
