@@ -24,3 +24,210 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-cards {
+  animation: scrollCards 18s linear infinite;
+}
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-cards {
+  display: flex;
+  width: max-content;
+  animation: scrollCards 20s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: marquee 10s linear infinite;
+}
+.hero-title {
+  animation: fadeUp 3s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: marquee 18s linear infinite;
+}
+body {
+  position: relative;
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+  600px circle at 50% 50%,
+    rgba(255, 215, 0, 0.08),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.premium-card:hover {
+  transform: translateY(-14px) scale(1.035);
+  border-color: #ff6a00;
+  box-shadow:
+    0 0 35px rgba(255, 106, 0, 0.28),
+    0 35px 90px rgba(0, 0, 0, 0.20);
+}
+
+
+.premium-card h3 {
+  transition: all 0.4s ease;
+}
+
+.premium-card:hover h3 {
+  color: #ff6a00;
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+.premium-card > * {
+  position: relative;
+  z-index: 1;
+}
+.premium-gold {
+  transition: all 0.5s ease;
+}
+
+.premium-gold:hover {
+  transform: translateY(-30px) scale(1.1);
+  border-color: #fbbf24;
+  box-shadow:
+    0 0 25px rgba(251,191,36,0.35),
+    0 0 120px rgba(251,191,36,0.80);
+}
+@keyframes cityScrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cityScrollRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.city-track-left {
+  display: flex;
+  width: max-content;
+  animation: cityScrollLeft 75s linear infinite;
+}
+
+
+  
+
+.city-track-right {
+  display: inline-block;
+  white-space: nowrap;
+  animation: cityScrollRight 42s linear infinite;
+}
+.agent-card {
+  transition: all 0.4s ease;
+}
+.agent-card:hover {
+  transform: translateY(-30px) scale(1.05);
+  box-shadow: 0 0 120px rgba(255, 255, 255, 0.9);
+}
+.business-card {
+  transition: all 0.35s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-25px) scale(1.05);
+  box-shadow:
+    0 0 150px rgba(255,255,255,1),
+    0 0 300px rgba(255,255,255,0.8);
+}
+@keyframes heroGlowMove {
+  0% {
+    transform: translate(-10%, -10%);
+  }
+  50% {
+    transform: translate(10%, 8%);
+  }
+  100% {
+    transform: translate(-10%, -10%);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.16), transparent 65%);
+  filter: blur(20px);
+  animation: heroGlowMove 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
