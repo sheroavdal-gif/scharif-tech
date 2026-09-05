@@ -222,10 +222,10 @@ export default function Home() {
             mobile app / software products, including native iOS applications.
           </p>
           <a
-            href="mailto:developer@avdalyan.world"
+            href="mailto:hello@avdalyan.world"
             className="text-orange-500 hover:text-orange-400 transition text-lg font-medium"
           >
-            developer@avdalyan.world
+            hello@avdalyan.world
           </a>
         </div>
       </footer>
