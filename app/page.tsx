@@ -206,17 +206,18 @@ export default function Home() {
       <section className="py-28 bg-[#0b0b0b] px-6">
         
 <p className="text-cyan-400 text-sm font-semibold mb-4">
-  Built by S. Avdalyan
+  Founded by S. Avdalyan
 </p>
 
 <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
-  The Person Behind Agent 13
+  About Avdalyan Tech LLC
 </h2>
 
 <p className="text-zinc-300 text-xl leading-relaxed max-w-4xl">
-  Behind Agent 13 is a builder focused on creating custom-coded websites,
-  AI automation systems and digital products designed to help modern
-  companies automate, scale and grow faster.
+  Founded by S. Avdalyan, Avdalyan Tech LLC is focused on creating
+  custom-coded websites, AI automation systems and digital products —
+  including native mobile apps — designed to help modern companies
+  automate, scale and grow faster.
 </p>
 </section>
 
