@@ -213,6 +213,22 @@ export default function Home() {
   companies automate, scale and grow faster.
 </p>
 </section>
+
+      <footer className="py-16 bg-[#0b0b0b] border-t border-white/10 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h3 className="text-2xl font-bold text-white mb-3">Avdalyan Tech LLC</h3>
+          <p className="text-zinc-400 text-lg max-w-3xl mb-6">
+            Avdalyan Tech LLC builds custom-coded websites, AI automation and
+            mobile app / software products, including native iOS applications.
+          </p>
+          <a
+            href="mailto:developer@avdalyan.world"
+            className="text-orange-500 hover:text-orange-400 transition text-lg font-medium"
+          >
+            developer@avdalyan.world
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }
