@@ -31,7 +31,7 @@ export default function Home() {
 </div>
 <div className="absolute inset-0 bg-black/60"></div>
         <div className="hero-glow top-24 left-40"></div>
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-6">
           <p className="text-sm text-zinc-750 mb-2">
   Welcome to Avdalyan.world — Where code meets ambition.
 </p>
@@ -91,8 +91,8 @@ export default function Home() {
     <source src="/dubai city.mp4" type="video/mp4" />
   </video>
 </div>
-        <div className="relative z-10 max-w-7xl mx-auto">
-          
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+
           <p className="text-orange-600 mb-4 font-semibold">How We Work</p>
 
           <h2 className="text-5xl md:text-7xl font-bold text-zinc-50 mb-16">
@@ -170,7 +170,7 @@ export default function Home() {
   fill
   className="object-cover opacity-500"
 /><div className="absolute inset-0 bg-white/20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <p className="text-orange-600 mb-4 font-semibold">Included</p>
 
           <h2 className="text-5xl md:text-7xl text-zinc-150 font-bold mb-16">
