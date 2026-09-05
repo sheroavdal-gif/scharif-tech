@@ -118,7 +118,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-32 bg-black text-white -mx-6 px-6 relative overflow-hidden">
+      <section className="py-32 bg-black text-white px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
   <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
 </div>
