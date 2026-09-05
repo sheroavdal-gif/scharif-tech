@@ -39,11 +39,17 @@ export default function Home() {
             Custom Websites • AI Automation • Agent 13 Included
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-8">
-            Professional Websites
-            <br />
-            Built With Code.
-          </h1>
+          <p className="text-2xl md:text-3xl font-semibold max-w-4xl mb-4">
+            Avdalyan Tech LLC builds custom-coded websites, AI automation and
+            mobile app / software products, including native iOS applications.
+          </p>
+
+          <a
+            href="mailto:hello@avdalyan.world"
+            className="text-orange-500 hover:text-orange-400 transition text-lg font-medium mb-10 inline-block"
+          >
+            hello@avdalyan.world
+          </a>
 
           <p className="text-2xl text-white-700 max-w-3xl mb-10">
             We build custom-coded websites for businesses that want a stronger
@@ -216,17 +222,7 @@ export default function Home() {
 
       <footer className="py-16 bg-[#0b0b0b] border-t border-white/10 px-6">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-2xl font-bold text-white mb-3">Avdalyan Tech LLC</h3>
-          <p className="text-zinc-400 text-lg max-w-3xl mb-6">
-            Avdalyan Tech LLC builds custom-coded websites, AI automation and
-            mobile app / software products, including native iOS applications.
-          </p>
-          <a
-            href="mailto:hello@avdalyan.world"
-            className="text-orange-500 hover:text-orange-400 transition text-lg font-medium"
-          >
-            hello@avdalyan.world
-          </a>
+          <h3 className="text-2xl font-bold text-white">Avdalyan Tech LLC</h3>
         </div>
       </footer>
     </main>
