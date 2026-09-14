@@ -9,10 +9,11 @@ export default function PrivacyPolicy() {
     <LegalLayout title="Viska Privacy Policy" lastUpdated="September 14, 2026">
       <section>
         <p>
-          Viska ("Viska", "we", "us") is developed and operated by{" "}
-          <strong className="text-white">Avdalyan Tech LLC</strong>, a U.S.
-          limited liability company. This policy explains what
-          information Viska collects, why, and what control you have over it.
+          Viska ("Viska", the "Service") is developed and operated by{" "}
+          <strong className="text-white">Avdalyan Tech LLC</strong> ("Avdalyan
+          Tech", "we", "us"), a U.S. limited liability company. This policy
+          explains what information Viska collects, why, and what control you
+          have over it.
         </p>
         <p>
           Viska is an end-to-end encrypted messenger. Our guiding principle is
@@ -35,8 +36,8 @@ export default function PrivacyPolicy() {
         <ul>
           <li>A device identifier generated on your device</li>
           <li>
-            Public encryption keys (Curve25519/Ed25519) used to establish
-            encrypted sessions with other users
+            Public encryption keys used to establish encrypted sessions with
+            other users
           </li>
           <li>
             An optional username, if you choose to set one and make yourself
@@ -213,12 +214,11 @@ export default function PrivacyPolicy() {
       <section>
         <h2>8. Third-party service providers</h2>
         <p>
-          We use infrastructure and storage providers (currently Fly.io for
-          hosting and database infrastructure, and Tigris for encrypted
-          object storage) to operate Viska, and Apple for optional push
-          notification delivery. These providers process data on our behalf
-          under their own security commitments and do not have the ability
-          to read your encrypted message content.
+          We use cloud hosting and object storage providers to operate
+          Viska, and Apple for optional push notification delivery. These
+          providers process data on our behalf under their own security
+          commitments and do not have the ability to read your encrypted
+          message content.
         </p>
       </section>
 
