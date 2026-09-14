@@ -223,7 +223,12 @@ export default function Home() {
 
       <footer className="py-16 bg-[#0b0b0b] border-t border-white/10 px-6">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-2xl font-bold text-white">Avdalyan Tech LLC</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">Avdalyan Tech LLC</h3>
+          <div className="flex gap-6 text-sm text-zinc-400">
+            <a href="/privacy" className="hover:text-orange-500 transition">Privacy Policy</a>
+            <a href="/terms" className="hover:text-orange-500 transition">Terms of Use</a>
+            <a href="/community-guidelines" className="hover:text-orange-500 transition">Community Guidelines</a>
+          </div>
         </div>
       </footer>
     </main>
