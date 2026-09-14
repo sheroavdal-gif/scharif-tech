@@ -10,8 +10,8 @@ export default function Terms() {
       <section>
         <p>
           These Terms of Use ("Terms") are an agreement between you and{" "}
-          <strong className="text-white">Avdalyan Tech LLC</strong>, a Wyoming,
-          USA limited liability company ("Avdalyan Tech", "we", "us"),
+          <strong className="text-white">Avdalyan Tech LLC</strong>, a U.S.
+          limited liability company ("Avdalyan Tech", "we", "us"),
           governing your use of the Viska application ("Viska", the
           "Service"). By creating an account or using Viska, you agree to
           these Terms and to our{" "}
@@ -109,7 +109,7 @@ export default function Terms() {
         <h2>8. Disclaimers</h2>
         <p>
           Viska is provided "as is" and "as available." While we use
-          industry-standard end-to-end encryption (Olm/Megolm) and take
+          industry-standard end-to-end encryption and take
           security seriously, no software or communications service can
           guarantee absolute security, uninterrupted availability, or
           error-free operation, and we disclaim all warranties to the

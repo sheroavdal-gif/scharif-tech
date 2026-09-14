@@ -10,8 +10,8 @@ export default function PrivacyPolicy() {
       <section>
         <p>
           Viska ("Viska", "we", "us") is developed and operated by{" "}
-          <strong className="text-white">Avdalyan Tech LLC</strong>, a Wyoming,
-          USA limited liability company. This policy explains what
+          <strong className="text-white">Avdalyan Tech LLC</strong>, a U.S.
+          limited liability company. This policy explains what
           information Viska collects, why, and what control you have over it.
         </p>
         <p>
