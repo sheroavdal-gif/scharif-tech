@@ -215,7 +215,7 @@ body {
 .city-track-left {
   display: flex;
   width: max-content;
-  animation: cityScrollLeft 75s linear infinite;
+  animation: cityScrollLeft 55s linear infinite;
 }
 
 
@@ -266,3 +266,40 @@ body {
   pointer-events: none;
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-in animation (see components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee,
+  .city-track-left,
+  .hero-glow {
+    animation: none;
+  }
+}
+
+/* Card lift + warm glow on hover */
+.lift-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px -20px rgba(249, 115, 22, 0.35);
+  border-color: rgba(249, 115, 22, 0.45);
+}
