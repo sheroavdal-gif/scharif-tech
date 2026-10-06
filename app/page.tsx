@@ -2,7 +2,9 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
 import Reveal from "./components/Reveal";
+import LazyVideo from "./components/LazyVideo";
 import PhoneMock from "./components/PhoneMock";
+import SpotlightCard from "./components/SpotlightCard";
 import StartProjectForm from "./components/StartProjectForm";
 
 const nav = [
@@ -133,8 +135,8 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-end overflow-hidden pb-24 pt-32 text-white">
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/NYC.mp4" type="video/mp4" />
+        <video autoPlay muted loop playsInline poster="/video/nyc-poster.jpg" className="absolute inset-0 w-full h-full object-cover">
+          <source src="/video/nyc-1080.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/60" />
         <div className="hero-glow top-24 left-10" />
@@ -170,7 +172,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Reveal key={service.title} delay={index * 120}>
-                <div className="lift-card h-full rounded-3xl border border-black/10 bg-white/80 backdrop-blur p-8">
+                <SpotlightCard className="h-full rounded-3xl border border-black/10 bg-white/80 backdrop-blur p-8">
                   <p className="text-xs font-mono text-orange-600 mb-6">[ {service.tag} ]</p>
                   <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                   <p className="text-zinc-500 mb-8">{service.line}</p>
@@ -182,7 +184,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
@@ -203,7 +205,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {products.map((product, index) => (
               <Reveal key={product.name} delay={index * 150}>
-                <div className="group lift-card h-full rounded-3xl border border-black/10 bg-white p-10 flex flex-col gap-10">
+                <SpotlightCard className="group h-full rounded-3xl border border-black/10 bg-white p-10 flex flex-col gap-10">
                   <PhoneMock name={product.name} accent={product.accent} image={productImage(product.slug)} />
                   <div>
                     <p className="text-sm text-zinc-500 mb-2">{product.kind}</p>
@@ -213,7 +215,7 @@ export default function Home() {
                       Coming soon to the App Store
                     </p>
                   </div>
-                </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
@@ -230,8 +232,8 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pricing.map((plan, index) => (
               <Reveal key={plan.title} delay={index * 100}>
-                <div
-                  className={`lift-card h-full rounded-3xl p-8 flex flex-col border ${
+                <SpotlightCard
+                  className={`h-full rounded-3xl p-8 flex flex-col border ${
                     plan.featured ? "bg-gradient-to-br from-orange-500 to-rose-500 text-white border-transparent shadow-xl shadow-orange-500/30" : "bg-white/80 border-black/10"
                   }`}
                 >
@@ -239,9 +241,9 @@ export default function Home() {
                   <p className="text-3xl font-bold mb-6">{plan.price}</p>
                   <p className={`text-sm leading-relaxed flex-1 ${plan.featured ? "text-white/90" : "text-zinc-600"}`}>{plan.text}</p>
                   <a href="#start" className={`mt-8 text-sm font-semibold transition ${plan.featured ? "text-white hover:text-white/80" : "text-orange-600 hover:text-orange-500"}`}>
-                    Get a quote →
+                    Get a quote <span className="card-arrow">→</span>
                   </a>
-                </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
@@ -274,10 +276,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {timeline.map(([time, text], index) => (
               <Reveal key={time} delay={index * 120}>
-                <div className="lift-card h-full rounded-3xl border border-black/10 bg-white/90 p-8">
+                <SpotlightCard className="h-full rounded-3xl border border-black/10 bg-white/90 p-8">
                   <p className="text-3xl font-bold text-orange-600 mb-3">{time}</p>
                   <p className="text-zinc-600">{text}</p>
-                </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
@@ -311,9 +313,7 @@ export default function Home() {
 
       {/* Start a project */}
       <section id="start" className="relative py-32 px-6 scroll-mt-16 overflow-hidden text-white">
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/Dub.mp4" type="video/mp4" />
-        </video>
+        <LazyVideo src="/video/dubai-1080.mp4" poster="/video/dubai-poster.jpg" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-zinc-950/80" />
         <div className="relative max-w-4xl mx-auto">
           <Reveal>

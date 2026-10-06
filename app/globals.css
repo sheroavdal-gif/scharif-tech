@@ -303,3 +303,43 @@ html {
   box-shadow: 0 30px 80px -20px rgba(249, 115, 22, 0.35);
   border-color: rgba(249, 115, 22, 0.45);
 }
+
+/* Interactive cards (see components/SpotlightCard.tsx): mouse-following
+   glow, lift and a glowing border on hover. */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(420px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(249, 115, 22, 0.18), transparent 60%);
+  pointer-events: none;
+}
+.spotlight-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(249, 115, 22, 0.55);
+  box-shadow: 0 30px 70px -20px rgba(249, 115, 22, 0.4), 0 0 0 1px rgba(249, 115, 22, 0.25);
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+.spotlight-card .card-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.spotlight-card:hover .card-arrow {
+  transform: translateX(6px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-card,
+  .spotlight-card:hover {
+    transform: none;
+  }
+}
