@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Viska Privacy Policy" lastUpdated="September 14, 2026">
+    <LegalLayout title="Viska Privacy Policy" lastUpdated="October 8, 2026">
       <section>
         <p>
           Viska ("Viska", the "Service") is developed and operated by{" "}
@@ -106,10 +106,27 @@ export default function PrivacyPolicy() {
 
         <h3>Push notification tokens</h3>
         <p>
-          Viska can optionally register a device token with Apple to wake the
-          app for new messages. This capability is not currently active in
-          the shipping app; when it is enabled, the token is used solely to
-          request a silent wake-up and is never used for marketing.
+          If you allow notifications, Viska registers a device token with
+          Apple's push notification service, together with which Apple
+          environment it belongs to and the generic, already-translated alert
+          text ("New message") shown on your lock screen. When someone sends
+          you a message, our server asks Apple to show that generic alert. It
+          never contains the sender, the chat, or any message content. If the
+          app is able to run, your device then fetches and decrypts the
+          message itself and replaces the alert with one showing the actual
+          content, which never leaves your device. The token is used only for
+          this purpose, never for marketing, and is deleted when you delete
+          your account.
+        </p>
+
+        <h3>Purchases</h3>
+        <p>
+          If you buy a Founder&apos;s Pass, a VIP username or a Viska Premium
+          subscription, payment is handled entirely by Apple; we never see
+          your payment details. To deliver what you bought, we store the
+          Apple transaction identifier linked to your device identity, along
+          with your Founder number, your VIP username or your
+          subscription&apos;s expiry date, and we verify purchases with Apple.
         </p>
       </section>
 
@@ -215,7 +232,8 @@ export default function PrivacyPolicy() {
         <h2>8. Third-party service providers</h2>
         <p>
           We use cloud hosting and object storage providers to operate
-          Viska, and Apple for optional push notification delivery. These
+          Viska, and Apple for push notification delivery and in-app purchase
+          verification. These
           providers process data on our behalf under their own security
           commitments and do not have the ability to read your encrypted
           message content.
