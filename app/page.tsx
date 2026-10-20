@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
 import Reveal from "./components/Reveal";
-import LazyVideo from "./components/LazyVideo";
+import GradientFlowBackground from "./components/GradientFlowBackground";
 import PhoneMock from "./components/PhoneMock";
 import SpotlightCard from "./components/SpotlightCard";
 import StartProjectForm from "./components/StartProjectForm";
@@ -110,6 +110,27 @@ function CityMarquee() {
     </div>
   );
 }
+
+// Each app has its own legal pages. Viska's keep their original URLs - they're
+// already linked from the App Store and the app itself.
+const LEGAL_LINKS = [
+  {
+    app: "Viska",
+    links: [
+      ["Privacy Policy", "/privacy"],
+      ["Terms of Use", "/terms"],
+      ["Community Guidelines", "/community-guidelines"],
+    ],
+  },
+  {
+    app: "Kelvix",
+    links: [
+      ["Privacy Policy", "/kelvix/privacy"],
+      ["Terms of Use", "/kelvix/terms"],
+      ["Community Guidelines", "/kelvix/community-guidelines"],
+    ],
+  },
+];
 
 export default function Home() {
   return (
@@ -313,8 +334,7 @@ export default function Home() {
 
       {/* Start a project */}
       <section id="start" className="relative py-32 px-6 scroll-mt-16 overflow-hidden text-white">
-        <LazyVideo src="/video/dubai-1080.mp4" poster="/video/dubai-poster.jpg" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-zinc-950/80" />
+        <GradientFlowBackground />
         <div className="relative max-w-4xl mx-auto">
           <Reveal>
             <SectionLabel light>Start a project</SectionLabel>
@@ -351,10 +371,20 @@ export default function Home() {
               hello@avdalyan.world
             </a>
           </div>
-          <div className="flex flex-wrap gap-6 text-sm text-zinc-400">
-            <a href="/privacy" className="hover:text-orange-400 transition">Privacy Policy</a>
-            <a href="/terms" className="hover:text-orange-400 transition">Terms of Use</a>
-            <a href="/community-guidelines" className="hover:text-orange-400 transition">Community Guidelines</a>
+          <div className="flex flex-col gap-8 md:min-w-[26rem]">
+            {LEGAL_LINKS.map(({ app, links }) => (
+              <div key={app}>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">{app}</p>
+                <div className="my-3 h-px bg-white/15" />
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
+                  {links.map(([label, href]) => (
+                    <a key={href} href={href} className="hover:text-orange-400 transition">
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </footer>

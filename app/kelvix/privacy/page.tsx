@@ -82,8 +82,9 @@ export default function KelvixPrivacyPolicy() {
         <p>
           When you ask Kelvix Coach a question, your question, your diet goal
           and (if you asked about a specific product) that product&rsquo;s data are
-          sent to our servers and to our AI provider, Anthropic, to generate
-          the answer. We do not store your questions or the answers. Please
+          sent to our servers and to a third-party AI provider to generate
+          the answer. The app asks for your permission before your first
+          question is sent. We do not store your questions or the answers. Please
           avoid including personal details, such as your name or medical
           history, in your questions.
         </p>
@@ -91,8 +92,9 @@ export default function KelvixPrivacyPolicy() {
         <h3>Label photos and product contributions</h3>
         <p>
           When you add a product Kelvix doesn&rsquo;t know yet, the photos you take
-          of its packaging are sent to our servers and to Anthropic to read
-          the label. We do not store the photos. We do store the text values
+          of its packaging are sent to our servers and to a third-party AI
+          provider to read the label. The app asks for your permission before
+          the first photos are sent. We do not store the photos. We do store the text values
           read from them (such as ingredients and nutrition values) together
           with your device identifier, so that the values you then save can
           be checked against the package. Products you add, and the values in
@@ -150,7 +152,7 @@ export default function KelvixPrivacyPolicy() {
         <ul>
           <li>Cloud hosting and database (servers in Sweden)</li>
           <li>Cloud storage for public product photos</li>
-          <li>Anthropic: AI for Kelvix Coach and label reading</li>
+          <li>A third-party AI provider: Kelvix Coach and label reading</li>
           <li>Open Food Facts: public product database (barcode only)</li>
         </ul>
         <p>
