@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function KelvixPrivacyPolicy() {
   return (
-    <LegalLayout title="Kelvix Privacy Policy" lastUpdated="October 20, 2026">
+    <LegalLayout title="Kelvix Privacy Policy" lastUpdated="October 25, 2026">
       <section>
         <p>
           Kelvix (&ldquo;Kelvix&rdquo;, the &ldquo;App&rdquo;) is developed and operated by{" "}
@@ -109,6 +109,17 @@ export default function KelvixPrivacyPolicy() {
           the report and prevent abuse.
         </p>
 
+        <h3>Kelvix Premium</h3>
+        <p>
+          Purchases are handled entirely by Apple. We never receive your name,
+          Apple ID or payment details. When you use Kelvix Coach or label
+          reading, the app sends us the signed proof of purchase that Apple
+          provides, so we can check with Apple that your subscription is
+          active. From it we keep only the subscription&rsquo;s transaction
+          number, together with the daily usage counters, to apply daily usage
+          limits.
+        </p>
+
         <h3>Apple Health</h3>
         <p>
           If you choose to use &ldquo;Log to Health&rdquo;, Kelvix writes nutrition values
@@ -122,6 +133,7 @@ export default function KelvixPrivacyPolicy() {
         <h2>3. How long we keep information</h2>
         <ul>
           <li>Usage-limit counters (device identifier and IP address): 2 days</li>
+          <li>Subscription transaction number (in usage-limit counters): 2 days</li>
           <li>Label photos and Coach questions: not stored by us</li>
           <li>Text read from label photos: 7 days</li>
           <li>
@@ -154,6 +166,7 @@ export default function KelvixPrivacyPolicy() {
           <li>Cloud storage for public product photos</li>
           <li>A third-party AI provider: Kelvix Coach and label reading</li>
           <li>Open Food Facts: public product database (barcode only)</li>
+          <li>Apple: subscription purchases and verification</li>
         </ul>
         <p>
           Some of these providers are based in the United States, so your
