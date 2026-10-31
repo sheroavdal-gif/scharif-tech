@@ -8,7 +8,7 @@ export default function CommunityGuidelines() {
   return (
     <LegalLayout
       title="Viska Community Guidelines"
-      lastUpdated="September 14, 2026"
+      lastUpdated="October 31, 2026"
     >
       <section>
         <p>
@@ -81,13 +81,15 @@ export default function CommunityGuidelines() {
       <section>
         <h2>2. Reporting &amp; blocking</h2>
         <p>
-          Every chat in Viska has a way to report a message or a user, and to
-          block a user outright so they can no longer reach you. Reporting a
+          Every chat and every Channel in Viska has a way to report a message
+          or post, and to block a user outright so they can no longer reach
+          you. Reporting a
           message shares that message's content (as decrypted on your
           device) and your stated reason with us for review — this is the
           only way reported private content ever becomes visible to us.
-          Blocking takes effect immediately and doesn't require anyone's
-          involvement.
+          Blocking takes effect immediately, removes that user's content from
+          your view right away, and also notifies us so we can review the
+          account.
         </p>
       </section>
 
@@ -104,6 +106,12 @@ export default function CommunityGuidelines() {
 
       <section>
         <h2>4. Enforcement</h2>
+        <p>
+          Viska has zero tolerance for objectionable content and abusive
+          users. We review every report within 24 hours; content that
+          violates these guidelines is removed and the account responsible
+          is banned.
+        </p>
         <p>
           Depending on severity, we may warn an account, remove specific
           content (for Channels), or suspend or permanently terminate an

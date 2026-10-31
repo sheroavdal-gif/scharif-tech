@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Terms() {
   return (
-    <LegalLayout title="Viska Terms of Use" lastUpdated="September 14, 2026">
+    <LegalLayout title="Viska Terms of Use" lastUpdated="October 31, 2026">
       <section>
         <p>
           These Terms of Use ("Terms") are an agreement between you and{" "}
@@ -55,6 +55,13 @@ export default function Terms() {
           the Service beyond what's permitted by law, or use the Service to
           harm minors in any way.
         </p>
+        <p>
+          <strong className="text-white">Zero tolerance.</strong> Viska has
+          zero tolerance for objectionable content and abusive users. This
+          includes harassment, threats, hate speech, sexual content involving
+          minors, and illegal content. Accounts that post such content or
+          abuse other users are removed from Viska.
+        </p>
       </section>
 
       <section>
@@ -81,6 +88,13 @@ export default function Terms() {
           permanently terminating an account, and — where we are legally
           required to and where we have relevant information available to
           us — cooperating with law enforcement.
+        </p>
+        <p>
+          We review every report within 24 hours. When reported content
+          violates these Terms or our Community Guidelines, we remove it and
+          ban the account responsible. You can also block any user at any
+          time; blocking takes effect immediately and notifies us so we can
+          review that account.
         </p>
       </section>
 
