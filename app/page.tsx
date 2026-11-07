@@ -56,6 +56,8 @@ const products = [
     text: "Scan a product's barcode to see ingredient warnings, packaging safety and a 0-100 health score - with an AI coach that answers your questions about it.",
     accent: "from-emerald-400 to-cyan-500",
     slug: "kelvix",
+    // Set once an app is live; without it the card says "Coming soon".
+    appStoreUrl: "https://apps.apple.com/app/id6826600822",
   },
 ];
 
@@ -232,9 +234,21 @@ export default function Home() {
                     <p className="text-sm text-zinc-500 mb-2">{product.kind}</p>
                     <h3 className="text-3xl font-bold mb-4">{product.title}</h3>
                     <p className="text-zinc-600 leading-relaxed">{product.text}</p>
-                    <p className="mt-6 inline-block text-sm font-semibold text-orange-600 bg-orange-100 rounded-full px-4 py-1.5">
-                      Coming soon to the App Store
-                    </p>
+                    {"appStoreUrl" in product && product.appStoreUrl ? (
+                      <a
+                        href={product.appStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-700 transition-colors rounded-full px-5 py-2"
+                      >
+                        Download on the App Store
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    ) : (
+                      <p className="mt-6 inline-block text-sm font-semibold text-orange-600 bg-orange-100 rounded-full px-4 py-1.5">
+                        Coming soon to the App Store
+                      </p>
+                    )}
                   </div>
                 </SpotlightCard>
               </Reveal>
