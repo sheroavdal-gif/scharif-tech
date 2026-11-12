@@ -48,6 +48,7 @@ const products = [
     text: "An end-to-end encrypted messenger for 1:1 and group chats, photos, video and voice messages - no phone number required. Available in 10 languages.",
     accent: "from-orange-400 to-rose-500",
     slug: "viska",
+    appStoreUrl: "https://apps.apple.com/app/id6815266943",
   },
   {
     name: "Kelvix",
