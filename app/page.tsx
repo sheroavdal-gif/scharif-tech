@@ -1,13 +1,38 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "./components/Reveal";
 import GradientFlowBackground from "./components/GradientFlowBackground";
 import PhoneMock from "./components/PhoneMock";
 import SpotlightCard from "./components/SpotlightCard";
 import StartProjectForm from "./components/StartProjectForm";
+import Snowfall from "./components/Snowfall";
+import ChristmasTree from "./components/ChristmasTree";
+import ShareGift from "./components/ShareGift";
+
+// December gift share preview (Facebook, LinkedIn, iMessage...). Remove in
+// January together with the #gift section and public/og-december-gift.png.
+export const metadata: Metadata = {
+  metadataBase: new URL("https://avdalyan.world"),
+  openGraph: {
+    title: "Half price on websites & apps - all of December",
+    description: "A Christmas gift from Avdalyan Tech: every website and app booked in December is built at half our normal price.",
+    url: "https://avdalyan.world/#gift",
+    siteName: "Avdalyan Tech",
+    images: [{ url: "/og-december-gift.png", width: 1200, height: 630, alt: "Half price on websites & apps all of December - Avdalyan Tech" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Half price on websites & apps - all of December",
+    description: "A Christmas gift from Avdalyan Tech.",
+    images: ["/og-december-gift.png"],
+  },
+};
 
 const nav = [
+  ["December gift", "#gift"],
   ["Services", "#services"],
   ["Products", "#products"],
   ["Pricing", "#pricing"],
@@ -49,6 +74,8 @@ const products = [
     accent: "from-orange-400 to-rose-500",
     slug: "viska",
     appStoreUrl: "https://apps.apple.com/app/id6815266943",
+    // Optional short status note shown under the card's button. Remove when done.
+    notice: "Server update in progress - Viska may be briefly unavailable. We'll be back shortly.",
   },
   {
     name: "Kelvix",
@@ -186,6 +213,55 @@ export default function Home() {
 
       <CityMarquee />
 
+      {/* December gift - half price all of December. Remove this section (and the
+          "December gift" nav link) in January. */}
+      <section id="gift" className="relative py-24 px-6 scroll-mt-16">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-700 via-red-600 to-rose-800 text-white shadow-2xl shadow-rose-900/30">
+              {/* Wrapping paper: ribbon cross + soft sparkle */}
+              <div aria-hidden="true" className="hidden md:block absolute inset-y-0 left-[30%] w-14 bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 opacity-90" />
+              <div aria-hidden="true" className="absolute inset-x-0 top-24 h-10 md:h-14 bg-gradient-to-b from-amber-300 via-yellow-200 to-amber-400 opacity-90" />
+              <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,rgba(255,255,255,0.18),transparent_30%),radial-gradient(circle_at_90%_10%,rgba(255,220,120,0.25),transparent_35%)]" />
+              <Snowfall />
+              {/* Bow where the ribbons cross */}
+              <div aria-hidden="true" className="gift-bow absolute left-1/2 -translate-x-1/2 md:left-[30%] md:-translate-x-[calc(50%-1.75rem)] top-24 -translate-y-[60%] w-40 h-24">
+                <div className="absolute left-1 top-3 w-20 h-14 rounded-[50%] border-[10px] border-amber-300 -rotate-[20deg]" />
+                <div className="absolute right-1 top-3 w-20 h-14 rounded-[50%] border-[10px] border-amber-300 rotate-[20deg]" />
+                <div className="absolute left-1/2 top-1/2 w-9 h-9 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-yellow-200 to-amber-400 shadow-lg" />
+              </div>
+
+              <div className="relative grid md:grid-cols-[30%_1fr] gap-10 px-8 md:px-14 pt-48 pb-14 md:pt-44">
+                <div className="relative flex justify-center items-end md:items-start">
+                  <ChristmasTree className="w-40 md:w-56 drop-shadow-[0_10px_30px_rgba(0,0,0,0.35)]" />
+                  <div className="gift-tag absolute -right-1 bottom-2 md:right-auto md:-left-2 md:top-48 md:bottom-auto inline-flex flex-col items-center justify-center rounded-3xl bg-white text-rose-700 px-6 py-4 shadow-xl">
+                    <span className="text-4xl md:text-5xl font-black leading-none">50%</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] mt-1">off</span>
+                  </div>
+                </div>
+                <div className="max-w-2xl">
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 mb-4">A gift from all of us at Avdalyan Tech</p>
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+                    Half price on websites &amp; apps - all of December.
+                  </h2>
+                  <p className="text-lg md:text-xl text-white/90 mt-6 leading-relaxed">
+                    Our Christmas present to you: every website and app booked in December is built at half our normal price.
+                    Websites from <span className="line-through text-white/60">$5,000</span> <span className="font-bold text-amber-200">$2,500</span>.
+                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-10">
+                    <a href="#start" className="bg-white text-rose-700 px-8 py-4 rounded-full font-semibold text-center hover:bg-amber-100 hover:-translate-y-1 transition shadow-xl">
+                      Unwrap your gift <span aria-hidden="true">→</span>
+                    </a>
+                    <ShareGift />
+                  </div>
+                  <p className="text-sm text-white/75 mt-6">Valid for websites and apps booked December 1-31, 2026.</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="relative py-32 px-6 scroll-mt-16">
         <div className="max-w-7xl mx-auto">
@@ -250,6 +326,12 @@ export default function Home() {
                         Coming soon to the App Store
                       </p>
                     )}
+                    {"notice" in product && product.notice ? (
+                      <p className="mt-4 flex items-start gap-2 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-2.5">
+                        <span aria-hidden="true">ℹ︎</span>
+                        <span>{product.notice}</span>
+                      </p>
+                    ) : null}
                   </div>
                 </SpotlightCard>
               </Reveal>

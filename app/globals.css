@@ -367,3 +367,35 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .gradient-blob { animation: none; }
 }
+
+/* December gift section */
+@keyframes giftBob {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-8px) rotate(-3deg); }
+}
+.gift-tag {
+  animation: giftBob 4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gift-tag { animation: none; }
+}
+@keyframes snowFall {
+  from { transform: translate3d(0, -10px, 0); }
+  to { transform: translate3d(var(--drift, 0px), 760px, 0); }
+}
+.snowflake {
+  animation-name: snowFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: blur(0.5px);
+}
+@keyframes treeTwinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.tree-light { animation: treeTwinkle 2s ease-in-out infinite; }
+.tree-star-glow { animation: treeTwinkle 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .snowflake { display: none; }
+  .tree-light, .tree-star-glow { animation: none; }
+}
