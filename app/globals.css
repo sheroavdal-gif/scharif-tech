@@ -281,7 +281,23 @@ html {
   opacity: 1;
   transform: none;
 }
+/* Process section: soft light sweeping across the blueprint */
+.blueprint-sweep {
+  left: -45%;
+  animation: blueprintSweep 9s ease-in-out infinite;
+}
+@keyframes blueprintSweep {
+  0% { transform: translateX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(350%); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .blueprint-sweep {
+    animation: none;
+    display: none;
+  }
   .reveal {
     opacity: 1;
     transform: none;

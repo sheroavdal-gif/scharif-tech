@@ -1,13 +1,15 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Reveal from "./components/Reveal";
 import GradientFlowBackground from "./components/GradientFlowBackground";
 import PhoneMock from "./components/PhoneMock";
 import SpotlightCard from "./components/SpotlightCard";
 import StartProjectForm from "./components/StartProjectForm";
 import OfferSection from "./components/OfferSection";
+import HeroCube from "./components/HeroCube";
+import BlueprintBackground from "./components/BlueprintBackground";
+import ProcessSteps from "./components/ProcessSteps";
 import { currentOffer, offerCopy } from "./offer";
 
 // Re-render hourly so the seasonal campaign (see offer.ts) switches on its own.
@@ -103,14 +105,14 @@ const steps = [
 ];
 
 const timeline = [
-  ["2 weeks", "Clean company website with essential pages and contact flow."],
+  ["1–2 weeks", "Clean company website with essential pages and contact flow."],
   ["3–4 weeks", "More advanced website with stronger design, sections and content structure."],
   ["5–6 weeks", "Larger build with custom features, automation and business-specific needs."],
 ];
 
 const faqs = [
   ["How much does a project cost?", "Websites start at $5,000. Apps, web apps and AI projects are quoted individually - tell us about your project in the form below and we'll send you a clear price."],
-  ["How long does it take?", "A typical website takes 2–6 weeks depending on size and features. Apps and larger systems are planned together with you, and you get a timeline before we start."],
+  ["How long does it take?", "A typical website takes 1–6 weeks depending on size and features. Apps and larger systems are planned together with you, and you get a timeline before we start."],
   ["Do you build mobile apps?", "Yes - apps for both iOS and Android, including the backend behind them. Viska and Kelvix are our own apps, built from the ground up."],
   ["Do you work with clients worldwide?", "Yes. We work remotely with companies all over the world - reach us by email or through the form below."],
 ];
@@ -187,28 +189,30 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-end overflow-hidden pb-24 pt-32 text-white">
-        <video autoPlay muted loop playsInline poster="/video/nyc-poster.jpg" className="absolute inset-0 w-full h-full object-cover">
-          <source src="/video/nyc-1080.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/60" />
+      <section className="relative min-h-screen flex items-center overflow-hidden pb-20 pt-28 text-white bg-[#050505]">
+        {/* Dark stage: soft top light + a faint diagonal light streak */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgba(255,255,255,0.08),transparent_55%)]" />
+        <div className="absolute -left-1/4 right-0 top-[62%] h-40 -rotate-6 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)] blur-2xl" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black/60" />
         <div className="hero-glow top-24 left-10" />
-        <div className="hero-glow bottom-10 right-10" style={{ animationDelay: "-6s" }} />
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6">
-          <p className="text-white/80 mb-6">Avdalyan Tech LLC — where code meets ambition.</p>
-          <h1 className="hero-title text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.95] max-w-5xl">
-            We build software that <span className="text-orange-400">performs.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/85 max-w-3xl mt-8">
-            Custom-coded websites, mobile apps for iOS and Android, and AI automation - for companies that want to move faster.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-10">
-            <a href="#start" className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-orange-600 hover:-translate-y-1 transition shadow-xl shadow-orange-500/30">
-              Start a project
-            </a>
-            <a href="#products" className="bg-white/10 backdrop-blur border border-white/30 px-8 py-4 rounded-full font-semibold text-center hover:bg-white/20 transition">
-              See our work
-            </a>
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-6 lg:gap-10">
+          <HeroCube className="order-first lg:order-last w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[560px] aspect-square mx-auto lg:translate-x-24" />
+          <div>
+            <p className="text-white/70 mb-6">Avdalyan Tech LLC — where code meets ambition.</p>
+            <h1 className="hero-title text-5xl sm:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent pb-2">
+              We build software that <span className="text-orange-400">performs.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/70 max-w-xl mt-8">
+              Custom-coded websites, mobile apps for iOS and Android, and AI automation - for companies that want to move faster.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <a href="#start" className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-orange-600 hover:-translate-y-1 transition shadow-xl shadow-orange-500/30">
+                Start a project
+              </a>
+              <a href="#products" className="bg-white/10 backdrop-blur border border-white/30 px-8 py-4 rounded-full font-semibold text-center hover:bg-white/20 transition">
+                See our work
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -325,26 +329,15 @@ export default function Home() {
 
       {/* Process + timeline */}
       <section id="process" className="relative py-32 px-6 scroll-mt-16 overflow-hidden">
-        <Image src="/kuala.jpg" alt="Kuala Lumpur skyline" fill className="object-cover" />
-        <div className="absolute inset-0 bg-[#f4efe7]/80" />
+        <BlueprintBackground />
         <div className="relative max-w-7xl mx-auto">
           <Reveal>
             <SectionLabel>Process</SectionLabel>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl mb-16">We think before we build.</h2>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-10 mb-24">
-            {steps.map(([number, title, text], index) => (
-              <Reveal key={number} delay={index * 120}>
-                <div className="border-t-2 border-orange-500/60 pt-8">
-                  <p className="font-mono text-orange-600 mb-4">[ {number} ]</p>
-                  <h3 className="text-2xl font-bold mb-3">{title}</h3>
-                  <p className="text-zinc-700 leading-relaxed">{text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <ProcessSteps steps={steps} />
           <Reveal>
-            <h3 className="text-2xl md:text-3xl font-bold mb-10">A website can be live within 2–6 weeks.</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-10">A website can be live within 1–6 weeks.</h3>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {timeline.map(([time, text], index) => (
