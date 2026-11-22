@@ -10,13 +10,13 @@ const flakes = Array.from({ length: 40 }, (_, i) => ({
   opacity: 0.45 + ((i * 3) % 5) / 10,
 }));
 
-export default function Snowfall() {
+export default function Snowfall({ color = "bg-white" }: { color?: string }) {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
       {flakes.map((f, i) => (
         <span
           key={i}
-          className="snowflake absolute -top-3 rounded-full bg-white"
+          className={`snowflake absolute -top-3 rounded-full ${color}`}
           style={
             {
               left: `${f.left}%`,
