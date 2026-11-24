@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function TelyraPrivacyPolicy() {
   return (
-    <LegalLayout title="Telyra Privacy Policy" lastUpdated="October 29, 2026">
+    <LegalLayout title="Telyra Privacy Policy" lastUpdated="November 24, 2026">
       <section>
         <p>
           Telyra (&ldquo;Telyra&rdquo;, the &ldquo;App&rdquo;) is developed and operated by{" "}
@@ -45,9 +45,10 @@ export default function TelyraPrivacyPolicy() {
       <section>
         <h2>2. Camera and microphone</h2>
         <p>
-          Telyra uses the front camera and the microphone to record you while
-          you read your script, and the microphone to let the script follow
-          your voice. Recordings are stored only on your device until you
+          Telyra uses the camera (front or back, whichever you choose) and the
+          microphone to record you, or what&rsquo;s in front of you, while you
+          read your script, and the microphone to let the script follow your
+          voice. Recordings are stored only on your device until you
           choose to save them to your photo library or share them.
         </p>
       </section>
@@ -114,8 +115,9 @@ export default function TelyraPrivacyPolicy() {
       <section>
         <h2>8. Children</h2>
         <p>
-          Telyra is not directed at children under 13, and we do not knowingly
-          collect data from children under that age.
+          Telyra is rated 4+ on the App Store and can be used by people of all
+          ages. Because Telyra collects no data from anyone, it collects no
+          data from children either; everything stays on the device.
         </p>
       </section>
 
