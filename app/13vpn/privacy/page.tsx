@@ -123,8 +123,9 @@ export default function VpnPrivacyPolicy() {
       <section>
         <h2>9. Children</h2>
         <p>
-          13VPN is not directed at children under 13, and we do not knowingly collect
-          data from anyone, including children.
+          13VPN is rated 4+ on the App Store and can be used by people of all ages.
+          Because 13VPN collects no personal data from anyone, it collects none from
+          children either.
         </p>
       </section>
 

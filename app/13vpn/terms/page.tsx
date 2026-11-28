@@ -76,6 +76,12 @@ export default function VpnTerms() {
           You are responsible for knowing and following the laws of the country you
           are in when you use 13VPN.
         </p>
+        <p>
+          If we become aware of child sexual abuse material connected to the Service,
+          we report it to the National Center for Missing &amp; Exploited Children
+          (NCMEC) as required by U.S. law. To report abuse of the Service, write to{" "}
+          <a href="mailto:hello@avdalyan.world">hello@avdalyan.world</a>.
+        </p>
       </section>
 
       <section>
